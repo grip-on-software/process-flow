@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Process flow</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
+    <link rel="stylesheet" href="main.css">
+
+	<script src="viz.js" type="javascript/worker"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <h1 class="title">Process flow</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section is-small">
+            <!-- Project navigation -->
+            <div id="navigation" class="tabs is-toggle">
+                <ul></ul>
+            </div>
+
+            <div id="error-message" class="notification is-danger is-hidden"></div>
+        </section>
+    </div>
+
+    <div id="container">
+        <div id="content">
+            <div class="container">
+                <section class="section">
+					<div id="flow"></div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="bundle.js"></script>
+</body>
+
+</html>

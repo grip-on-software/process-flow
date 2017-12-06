@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "cp node_modules/viz.js/viz.js public/viz.js && cross-env NODE_ENV=development webpack --progress --hide-modules",
+    "watch": "cp node_modules/viz.js/viz.js public/viz.js && cross-env NODE_ENV=development webpack --watch --progress --hide-modules",
+    "hot": "cp node_modules/viz.js/viz.js public/viz.js && cross-env NODE_ENV=development webpack-dev-server --inline --hot",
+    "production": "cp node_modules/viz.js/viz.js public/viz.js && cross-env NODE_ENV=production webpack --hide-modules"
+  },
+  "devDependencies": {
+    "laravel-mix": "^0.10.0"
+  },
+  "dependencies": {
+    "axios": "^0.16.1",
+    "d3": "^4.8.0",
+    "d3-graphviz": "^1.1.0",
+    "javascript-natural-sort": "^0.7.1",
+    "lodash": "^4.17.4"
+  }
+}

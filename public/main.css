@@ -1,0 +1,21 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#header {
+    margin-bottom: 10px;    
+    border-bottom: 1px solid #eee;
+    font-weight: 400;
+}
+
+#header h1 {
+    padding: 1.5rem;
+}
+
+.tabs ul {
+	flex-wrap: wrap;
+}
+
+#flow {
+	text-align: center;
+}
