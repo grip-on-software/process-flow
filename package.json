@@ -1,18 +1,21 @@
 {
   "private": true,
   "scripts": {
-    "dev": "cp node_modules/viz.js/viz.js public/viz.js && cross-env NODE_ENV=development webpack --progress --hide-modules",
-    "watch": "cp node_modules/viz.js/viz.js public/viz.js && cross-env NODE_ENV=development webpack --watch --progress --hide-modules",
-    "hot": "cp node_modules/viz.js/viz.js public/viz.js && cross-env NODE_ENV=development webpack-dev-server --inline --hot",
-    "production": "cp node_modules/viz.js/viz.js public/viz.js && cross-env NODE_ENV=production webpack --hide-modules"
+    "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production webpack --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
-    "laravel-mix": "^0.10.0"
+    "browser-sync": "^2.19.0",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "laravel-mix": "^1.7.2"
   },
   "dependencies": {
-    "axios": "^0.16.1",
-    "d3": "^4.8.0",
-    "d3-graphviz": "^1.1.0",
+    "@gros/visualization-ui": "^0.0.6",
+    "axios": "^0.16.2",
+    "d3": "^4.12.0",
+    "d3-graphviz": "^1.2.0",
     "javascript-natural-sort": "^0.7.1",
     "lodash": "^4.17.4"
   }

@@ -1,11 +1,21 @@
 let mix = require('laravel-mix');
 
+Mix.paths.setRootPath(__dirname);
 mix.setPublicPath('public/')
+    .copy('node_modules/viz.js/viz.js', 'public/viz.js')
     .js('lib/index.js', 'public/bundle.js')
+    .styles([
+        'node_modules/bulma/css/bulma.css',
+        'res/main.css'
+    ], 'public/main.css')
     .browserSync({
         proxy: false,
-        server: 'public'
-    });;
+        server: 'public',
+        files: [
+            'public/**/*.js',
+            'public/**/*.css'
+        ]
+    });
 
 // Full API
 // mix.js(src, output);

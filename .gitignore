@@ -6,4 +6,5 @@ output/
 public/data
 public/mix-manifest.json
 public/hot
+public/main.css
 public/viz.js
