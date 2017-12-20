@@ -10,6 +10,5 @@ ARG NPM_REGISTRY
 RUN npm config set @gros:registry $NPM_REGISTRY
 COPY package.json /usr/src/app/
 RUN npm install && npm cache clean --force
-COPY . /usr/src/app
 
 CMD ["npm", "start"]

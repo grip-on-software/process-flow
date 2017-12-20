@@ -57,7 +57,7 @@ pipeline {
             }
             steps {
                 withCredentials([file(credentialsId: 'data-analysis-config', variable: 'ANALYSIS_CONFIGURATION')]) {
-                    sh '/bin/bash -c "rm -rf $PWD/output && mkdir $PWD/output && cd /home/docker && Rscript report.r $REPORT_PARAMS --projects each --log INFO --config $ANALYSIS_CONFIGURATION --output $PWD/output"'
+                    sh '/bin/bash -c "rm -rf $PWD/output && mkdir $PWD/output && cd /home/docker && Rscript report.r $REPORT_PARAMS --report story_flow --projects each --log INFO --config $ANALYSIS_CONFIGURATION --output $PWD/output"'
                 }
             }
         }
