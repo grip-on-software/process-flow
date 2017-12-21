@@ -19,3 +19,8 @@ body {
 #flow {
 	text-align: center;
 }
+
+/* d3-graphviz bug */
+div[display=none] {
+	display: none;
+}

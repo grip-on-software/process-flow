@@ -1,8 +1,9 @@
-let mix = require('laravel-mix');
+let mix = require('laravel-mix'),
+    webpack = require('webpack');
 
 Mix.paths.setRootPath(__dirname);
 mix.setPublicPath('public/')
-    .copy('node_modules/viz.js/viz.js', 'public/viz.js')
+    .copy('node_modules/viz.js/viz.js', 'public/worker.js')
     .js('lib/index.js', 'public/bundle.js')
     .styles([
         'node_modules/bulma/css/bulma.css',
@@ -15,7 +16,8 @@ mix.setPublicPath('public/')
             'public/**/*.js',
             'public/**/*.css'
         ]
-    });
+    })
+    .extract(['viz.js']);
 
 // Full API
 // mix.js(src, output);

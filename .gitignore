@@ -1,5 +1,7 @@
 bundle.js
 bundle.js.map
+manifest.js
+vendor.js
 node_modules
 data/
 output/
@@ -7,4 +9,4 @@ public/data
 public/mix-manifest.json
 public/hot
 public/main.css
-public/viz.js
+public/worker.js
