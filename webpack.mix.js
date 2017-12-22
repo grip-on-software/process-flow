@@ -3,12 +3,10 @@ let mix = require('laravel-mix'),
 
 Mix.paths.setRootPath(__dirname);
 mix.setPublicPath('public/')
+    .setResourceRoot('')
     .copy('node_modules/viz.js/viz.js', 'public/worker.js')
     .js('lib/index.js', 'public/bundle.js')
-    .styles([
-        'node_modules/bulma/css/bulma.css',
-        'res/main.css'
-    ], 'public/main.css')
+    .sass('res/main.scss', 'public/main.css')
     .browserSync({
         proxy: false,
         server: 'public',
