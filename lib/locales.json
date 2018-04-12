@@ -1,0 +1,16 @@
+{
+    "en": {
+        "language": "English",
+        "messages": {
+            "title": "Process Flow",
+            "data-error": "Could not load data: %s"
+        }
+    },
+    "nl": {
+        "language": "Nederlands",
+        "messages": {
+            "title": "Procesverloop",
+            "data-error": "Kon geen gegevens laden: %s"
+        }
+    }
+}
