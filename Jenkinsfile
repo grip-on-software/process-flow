@@ -2,6 +2,7 @@ pipeline {
     agent { label 'docker' }
 
     environment {
+        IMAGE_TAG = env.BRANCH_NAME.replaceFirst('^master$', 'latest')
         GITLAB_TOKEN = credentials('process-flow-gitlab-token')
         SCANNER_HOME = tool name: 'SonarQube Scanner 3', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
     }
@@ -16,9 +17,6 @@ pipeline {
     }
 
     post {
-        success {
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'public', reportFiles: 'index.html', reportName: 'Visualization', reportTitles: ''])
-        }
         failure {
             updateGitlabCommitStatus name: env.JOB_NAME, state: 'failed'
         }
@@ -40,7 +38,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'docker build -t $DOCKER_REGISTRY/gros-process-flow . --build-arg NPM_REGISTRY=$NPM_REGISTRY'
+                sh 'docker build -t $DOCKER_REGISTRY/gros-process-flow:$IMAGE_TAG . --build-arg NPM_REGISTRY=$NPM_REGISTRY'
             }
         }
         stage('SonarQube Analysis') {
@@ -62,6 +60,14 @@ pipeline {
             }
         }
         stage('Collect') {
+            when {
+                anyOf {
+                    branch 'master'
+                    expression {
+                        currentBuild.rawBuild.getCause(hudson.triggers.TimerTrigger$TimerTriggerCause) == null
+                    }
+                }
+            }
             agent {
                 docker {
                     image '$DOCKER_REGISTRY/gros-data-analysis-dashboard'
@@ -75,18 +81,31 @@ pipeline {
             }
         }
         stage('Visualize') {
+            when {
+                anyOf {
+                    branch 'master'
+                    expression {
+                        currentBuild.rawBuild.getCause(hudson.triggers.TimerTrigger$TimerTriggerCause) == null
+                    }
+                }
+            }
             agent {
                 docker {
-                    image '$DOCKER_REGISTRY/gros-process-flow'
+                    image '$DOCKER_REGISTRY/gros-process-flow:$IMAGE_TAG'
                     reuseNode true
                 }
             }
             steps {
-                sh 'rm -rf public/data/'
-                sh 'mv output/ public/data/'
-                sh 'rm -rf node_modules/'
-                sh 'ln -s /usr/src/app/node_modules .'
-                sh 'npm run production -- --env.mixfile=$PWD/webpack.mix.js'
+                withCredentials([file(credentialsId: 'process-flow-config', variable: 'PROCESS_FLOW_CONFIGURATION')]) {
+                    sh 'cp $PROCESS_FLOW_CONFIGURATION config.json'
+                    sh 'rm -rf public/data/'
+                    sh 'mkdir -p public/'
+                    sh 'mv output/ public/data/'
+                    sh 'rm -rf node_modules/'
+                    sh 'ln -s /usr/src/app/node_modules .'
+                    sh 'npm run production -- --env.mixfile=$PWD/webpack.mix.js'
+                }
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'public', reportFiles: 'index.html', reportName: 'Visualization', reportTitles: ''])
             }
         }
         stage('Status') {
