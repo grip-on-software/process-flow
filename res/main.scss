@@ -48,6 +48,19 @@ body {
     height: 25rem;
 }
 
+#legend .tag {
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 8px;
+	padding: 1.25em;
+	margin: 0 .25em .25em 0;
+	font-family: serif;
+}
+
+#palette svg text {
+	font-size: 75%;
+}
+
 /* d3-graphviz bug */
 div[display=none] {
 	display: none;
