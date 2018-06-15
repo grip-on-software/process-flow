@@ -3,6 +3,8 @@
         "language": "English",
         "messages": {
             "title": "Process Flow",
+            "help": "The flow graph indicates how stories proceed through different states. The total number of stories that go from one state to another is shown next to each transition, as well as the average number of days that the stories remained in the earlier state. These metrics also affect the width of the lines and the color temperature.",
+            "tips": "Hover over the text to see which transition it relates to. You can also zoom and drag.",
             "data-error": "Could not load data: %s"
         }
     },
@@ -10,6 +12,8 @@
         "language": "Nederlands",
         "messages": {
             "title": "Procesverloop",
+            "help": "Het stroomdiagram laat zien hoe stories verlopen tussen verschillende statussen. Het totaal aantal stories dat van een status naar een ander gaan wordt naast de transitie getoond, alsmede het gemiddelde aantal dagen dat de stories in hun eerdere toestand vebleven. Deze metrieken zijn ook van invloed op de lijndikte en kleurwarmte.",
+            "tips": "Zweef boven de tekst om te zien bij welke transitie deze hoort. Je kan ook zoomen en verslepen.",
             "data-error": "Kon geen gegevens laden: %s"
         }
     }

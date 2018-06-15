@@ -14,6 +14,14 @@ body {
     padding: 1.5rem;
 }
 
+.section.is-small {
+    padding: .5rem 1.5rem;
+}
+
+.section {
+	padding: 1.5rem;
+}
+
 .tabs ul {
 	flex-wrap: wrap;
 }
@@ -35,7 +43,7 @@ body {
 #flow svg {
     display: block;
     width: 100%;
-    height: 30rem;
+    height: 25rem;
     box-shadow: 2px 1px 5px #ccc;
     border-radius: 3px;
 }

@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
     <link rel="stylesheet" href="{{ visualization_url }}navbar.css">
 
-	<script src="manifest.js"></script>
-	<script src="worker.js" type="javascript/worker"></script>
+    <script src="manifest.js"></script>
+    <script src="worker.js" type="javascript/worker"></script>
 </head>
 
 <body>
@@ -29,6 +29,27 @@
             </div>
 
             <div id="error-message" class="notification is-danger is-hidden"></div>
+        </section>
+    </div>
+
+    <div class="container">
+        <section class="section is-small">
+            <div class="tile is-ancestor">
+                <div class="tile is-parent is-9">
+                    <div class="tile is-child box">
+                        <div class="content">
+                            <p data-message="help"></p>
+                            <p class="has-text-grey" data-message="tips"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tile is-parent is-hidden">
+                    <div class="tile is-child box">
+                        <div class="content" id="legend">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 
