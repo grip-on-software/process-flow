@@ -4,7 +4,8 @@
         "messages": {
             "title": "Process Flow",
             "help": "The flow graph indicates how stories proceed through different states. The total number of stories that go from one state to another is shown next to each transition, as well as the average number of work days that the stories remained in the earlier state. These metrics also affect the width of the lines (main streams) and the color temperature (bottlenecks).",
-            "tips": "Hover over the text to see which transition it relates to. You can also zoom and drag.",
+            "tips": "Hover over the text to see which transition it relates to. You can also zoom and drag. Use the slider to limit to transitions with at least the number of stories.",
+            "stories": "Stories:",
             "temperature-low": "Short",
             "temperature-high": "Long",
             "data-error": "Could not load data: %s"
@@ -22,7 +23,8 @@
         "messages": {
             "title": "Procesverloop",
             "help": "Het stroomdiagram laat zien hoe stories verlopen tussen verschillende statussen. Het totaal aantal stories dat van een status naar een ander gaat wordt naast de lijn getoond, alsmede het gemiddelde aantal weekdagen dat de stories in hun eerdere toestand vebleven. Deze metrieken zijn ook van invloed op de lijndikte (hoofstroom) en kleurwarmte (bottlenecks).",
-            "tips": "Zweef boven de tekst om te zien bij welke transitie deze hoort. Je kan ook zoomen en verslepen.",
+            "tips": "Zweef boven de tekst om te zien bij welke transitie deze hoort. Je kan ook zoomen en verslepen. Gebruik de schuifbalk om te beperken tot minimaal het gekozen aantal stories.",
+            "stories": "Stories:",
             "temperature-low": "Kort",
             "temperature-high": "Lang",
             "data-error": "Kon geen gegevens laden: %s"
