@@ -97,7 +97,6 @@ pipeline {
             }
             steps {
                 withCredentials([file(credentialsId: 'process-flow-config', variable: 'PROCESS_FLOW_CONFIGURATION')]) {
-                    sh 'cp $PROCESS_FLOW_CONFIGURATION config.json'
                     sh 'rm -rf public/data/'
                     sh 'mkdir -p public/'
                     sh 'mv output/ public/data/'
