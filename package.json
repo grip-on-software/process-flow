@@ -20,7 +20,7 @@
     "nyc": "^11.6.0"
   },
   "dependencies": {
-    "@gros/visualization-ui": "^0.4.5",
+    "@gros/visualization-ui": "^0.4.6",
     "axios": "^0.16.2",
     "bulma": "^0.6.1",
     "bulma-slider": "^2.0.0",

@@ -36,6 +36,13 @@ body {
     top: 1.5rem;
 }
 
+#filter label {
+    padding: 1em .5em 1em .5em;
+}
+#filter input {
+    margin-right: .25rem;
+}
+
 #flow {
 	text-align: center;
     height: 25rem;
