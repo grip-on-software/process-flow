@@ -20,11 +20,11 @@ body {
 }
 
 .section {
-	padding: 1.5rem;
+    padding: 1.5rem;
 }
 
 .tabs ul {
-	flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 #container {
@@ -47,9 +47,10 @@ body {
 }
 
 #flow {
-	text-align: center;
+    text-align: center;
     height: 25rem;
     box-shadow: 2px 1px 5px #ccc;
+    background-color: #fdfdfd;
     border-radius: 3px;
 }
 
@@ -60,21 +61,21 @@ body {
 }
 
 #legend, #palette {
-	margin-bottom: .5rem;
+    margin-bottom: .5rem;
 }
 
 #legend .tag {
-	border-width: 1px;
-	border-style: solid;
-	border-radius: 8px;
-	padding: 1.25em;
-	margin: 0 .25em .25em 0;
-	font-family: serif;
-	background-color: #ffffff;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 8px;
+    padding: 1.25em;
+    margin: 0 .25em .25em 0;
+    font-family: serif;
+    background-color: #ffffff;
 }
 
 #palette svg text {
-	font-size: 75%;
+    font-size: 75%;
 }
 
 #slider {
@@ -85,16 +86,16 @@ body {
 }
 
 #slider input {
-	direction: rtl;
-	margin: 0;
+    direction: rtl;
+    margin: 0;
 }
 
 #slider output {
-	top: 0;
-	padding: .2rem .4rem;
+    top: 0;
+    padding: .2rem .4rem;
 }
 
 /* d3-graphviz bug */
 div[display=none] {
-	display: none;
+    display: none;
 }
