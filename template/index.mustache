@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Process flow</title>
+    <title data-message="title">Process Flow</title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
     <link rel="stylesheet" href="{{ visualization_url }}navbar.css">
@@ -16,73 +16,75 @@
     aria-label="main navigation" id="navbar">
     </nav>
 
-    <div id="header">
-        <div class="container">
-            <h1 class="title" data-message="title">Process flow</h1>
-        </div>
-    </div>
-
-    <div class="container">
-        <section class="section is-small">
-            <div class="columns is-multiline">
-                <div class="column">
-                    <div id="navigation" class="tabs is-toggle">
-                    </div>
-                </div>
-                <div class="column is-narrow">
-                    <div id="filter" class="content is-small">
-                    </div>
-                    <div id="zoom" class="content has-text-right">
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <div id="container">
-        <div id="content">
+    <main role="main">
+        <div id="header">
             <div class="container">
-                <section class="section">
-                    <div id="error-message" class="notification is-danger is-hidden"></div>
-                    <div id="flow"></div>
-                </section>
+                <h1 class="title" data-message="title">Process flow</h1>
             </div>
         </div>
-    </div>
 
-    <div class="container">
-        <section class="section is-small">
-            <div class="tile is-ancestor">
-                <div class="tile is-parent is-9">
-                    <div class="tile is-child box">
-                        <div class="content">
-                            <p data-message="help"></p>
-                            <p class="has-text-grey" data-message="tips"></p>
+        <div class="container">
+            <section class="section is-small">
+                <div class="columns is-multiline">
+                    <div class="column">
+                        <div id="navigation" class="tabs is-toggle">
+                        </div>
+                    </div>
+                    <div class="column is-narrow">
+                        <div id="filter" class="content is-small">
+                        </div>
+                        <div id="zoom" class="content has-text-right">
                         </div>
                     </div>
                 </div>
-                <div class="tile is-parent">
-                    <div class="tile is-child box">
-                        <div class="content" id="legend">
+            </section>
+        </div>
+
+        <div id="container">
+            <div id="content">
+                <div class="container">
+                    <section class="section">
+                        <div id="error-message" class="notification is-danger is-hidden"></div>
+                        <div id="flow"></div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <section class="section is-small">
+                <div class="tile is-ancestor">
+                    <div class="tile is-parent is-9">
+                        <div class="tile is-child box">
+                            <div class="content">
+                                <p data-message="help"></p>
+                                <p class="has-text-grey" data-message="tips"></p>
+                            </div>
                         </div>
-                        <div class="content" id="palette">
-                        </div>
-                        <div class="content" id="slider">
-                            <div class="columns">
-                                <div class="column is-narrow">
-                                    <span class="content is-small" data-message="stories">Stories:</span>
-                                </div>
-                                <div class="column">
-                                    <input type="range" id="num-stories" class="slider has-output is-small" min="1" step="1">
-                                    <output for="num-stories"></output>
+                    </div>
+                    <div class="tile is-parent">
+                        <div class="tile is-child box">
+                            <div class="content" id="legend">
+                            </div>
+                            <div class="content" id="palette">
+                            </div>
+                            <div class="content" id="slider">
+                                <div class="columns">
+                                    <div class="column is-narrow">
+                                        <label class="content is-small" for="num-stories" data-message="stories">Stories:</label>
+                                    </div>
+                                    <div class="column">
+                                        <input type="range" id="num-stories" class="slider has-output is-small" min="1" step="1">
+                                        <output for="num-stories"></output>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </div>
+            </section>
+        </div>
+    </main>
 
     <script type="text/javascript" src="{{ visualization_url }}manifest.js"></script>
     <script type="text/javascript" src="{{ visualization_url }}vendor.js"></script>

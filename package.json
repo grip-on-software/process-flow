@@ -20,12 +20,12 @@
     "nyc": "^11.6.0"
   },
   "dependencies": {
-    "@gros/visualization-ui": "^0.5.2",
+    "@gros/visualization-ui": "^0.5.3",
     "axios": "^0.18.0",
     "bulma": "^0.7.4",
     "bulma-slider": "^2.0.0",
     "cross-env": "^5.2.0",
-    "d3": "^5.9.1",
+    "d3": "^5.9.2",
     "d3-graphviz": "^2.6.1",
     "lodash": "^4.17.11"
   }
