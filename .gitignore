@@ -13,3 +13,4 @@ public/mix-manifest.json
 public/hot
 public/main.css
 public/worker.js
+public/graphvizlib.wasm

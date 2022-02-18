@@ -1,4 +1,5 @@
 const fs = require('fs'),
+      path = require('path'),
       mix = require('laravel-mix'),
       _ = require('lodash'),
       HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -21,9 +22,9 @@ const configuration = _.mapValues(JSON.parse(fs.readFileSync(config)),
 Mix.paths.setRootPath(__dirname);
 mix.setPublicPath('public/')
     .setResourceRoot('')
-    .copy('node_modules/viz.js/viz.js', 'public/worker.js')
+    .copy('node_modules/@hpcc-js/wasm/dist/index.min.js', 'public/worker.js')
+    .copy('node_modules/@hpcc-js/wasm/dist/graphvizlib.wasm', 'public/graphvizlib.wasm')
     .js('lib/index.js', 'public/bundle.js')
-    .extract(['viz.js'])
     .sass('res/main.scss', 'public/main.css')
     .browserSync({
         proxy: false,
