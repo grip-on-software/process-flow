@@ -36,7 +36,7 @@ a minimized bundle. The resulting HTML, CSS and JavaScript is made available in
 the `public` directory.
 
 This repository also contains a `Dockerfile` specification for a Docker image 
-that can performs the installation of the app and dependencies, which allows 
+that can perform the installation of the app and dependencies, which allows 
 building the visualization within there. Also, a `Jenkinsfile` contains 
 appropriate steps for a Jenkins CI deployment, including data collection and 
 visualization building.
