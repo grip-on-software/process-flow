@@ -40,8 +40,8 @@ const configuration = _.mapValues(JSON.parse(fs.readFileSync(config)),
 Mix.paths.setRootPath(__dirname);
 mix.setPublicPath('public/')
     .setResourceRoot('')
-    .copy('node_modules/@hpcc-js/wasm/dist/index.min.js', 'public/worker.js')
-    .copy('node_modules/@hpcc-js/wasm/dist/graphvizlib.wasm', 'public/graphvizlib.wasm')
+    .copy('node_modules/@hpcc-js/wasm/dist/graphviz.umd.js', 'public/worker.js')
+    .copy('node_modules/@hpcc-js/wasm/dist/graphviz.umd.js.map', 'public/worker.js.map')
     .js('lib/index.js', 'public/bundle.js')
     .sass('res/main.scss', 'public/main.css')
     .browserSync({

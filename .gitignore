@@ -6,11 +6,12 @@ vendor.js
 node_modules
 data/
 output/
-public/data
+public/data*
 public/fonts
 public/index.html
 public/mix-manifest.json
 public/hot
 public/main.css
-public/worker.js
+public/*.js
+public/*.js.map
 public/graphvizlib.wasm
