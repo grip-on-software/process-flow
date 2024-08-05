@@ -2,6 +2,10 @@
   "name": "@gros/process-flow",
   "version": "0.0.1",
   "description": "Flowchart display of story status.",
+  "keywords": [
+      "visualization",
+      "software-ecosystem"
+  ],
   "license": "Apache-2.0",
   "author": "Leon Helwerda <l.s.helwerda@liacs.leidenuniv.nl>",
   "files": [
@@ -11,9 +15,10 @@
       "public/*.html",
       "public/*.js",
       "public/*.js.LICENSE.txt",
-      "public/fonts/",
       "public/mix-manifest.json",
-      "res/*.scss"
+      "res/*.scss",
+      "template/*.mustache",
+      "webpack.mix.js"
   ],
   "directories": {
       "dist": "public",
